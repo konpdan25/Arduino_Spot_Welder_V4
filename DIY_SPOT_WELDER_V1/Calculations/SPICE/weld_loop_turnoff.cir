@@ -1,0 +1,50 @@
+* DIY_SPOT_WELDER_V1 - weld loop turn-on/turn-off, behavioural model (NOT a vendor model)
+* Battery RT1270 (typ): OCV 12.7 V, Rint 32 mOhm, lead inductance 0.4 uH (worst)
+* Welding cables 1.5 uH (worst), loop R per weld_calc.py typical
+* 6x IRLZ44N lumped as one switch: Ron = 22m*1.6/6 = 5.9 mOhm, Coss(lumped) ~ 6*0.4nF
+* Parameter FW=1 inserts the STPS3045CP free-wheel diode (drain -> battery+ bus)
+.param FW=1
+Vbat  bat 0 DC 12.7
+Rint  bat b1 32m
+Lbat  b1 P 0.4u
+* bus capacitor at assembly: 1000uF / ESR 40m
+Cbus  P cb 1000u IC=12.7
+Resr  cb S 40m
+* bus TVS SMBJ24CA (bidirectional, modelled one direction)
+Dtvs  S P DTVS
+* positive path: fuse+relay+disconnect+joints (lumped)
+Rpos  P e1 1.6m
+Lw    e1 e2 1.5u
+* weld zone + tips + cables
+Rload e2 D 2.72m
+* MOSFET bank: switch with series Ron, Coss
+S1    D S2 g 0 SWFET
+Rds   S2 S 0.1m
+Coss  D S 2.4n
+* free-wheel diode STPS3045CP (both dice in parallel) - enabled when FW=1
+Dfw   D Pfw DSTPS
+Rfw   Pfw pf2 {1m + (1-FW)*1e9}
+Vfw   pf2 P DC 0
+* return lead battery-  (S is source bus = control GND reference)
+Rneg  S 0 0.6m
+Evds  vds 0 D S 1
+Evp   vp 0 P S 1
+* gate command: 20 ms pulse starting at 1 ms, 1 us edges
+Vg    g 0 PWL(0 0 1m 0 1.001m 5 21m 5 21.001m 0)
+.model SWFET SW(Ron=5.8m Roff=10k Vt=2.5 Vh=0.1)
+.model DSTPS D(Is=2e-4 N=1.2 Rs=1.5m Cjo=4n BV=45 Ibv=1m)
+.model DTVS  D(Is=1e-12 N=1 BV=26.7 Ibv=1m Rs=0.2 Cjo=1n)
+.options method=gear reltol=1e-4
+.tran 0.5u 23m 0 0.5u uic
+.meas tran I_pk   MIN i(Vbat) from=2m to=21m
+.meas tran VDS_on AVG v(vds) from=10m to=20m
+.meas tran VP_on  AVG v(vp) from=10m to=20m
+.meas tran VDS_pk MAX v(vds) from=21m to=23m
+.meas tran VP_pk  MAX v(vp) from=21m to=23m
+.meas tran IFW_pk MAX i(Vfw) from=21m to=23m
+.control
+  run
+  wrdata weld_loop_FW.dat v(vds) v(vp) i(Vbat)
+  quit
+.endc
+.end

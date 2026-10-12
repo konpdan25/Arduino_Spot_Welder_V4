@@ -1,0 +1,20 @@
+=== weld_loop_turnoff.cir
+i_pk                =  -2.965904e+02 at=  2.000159e-03
+vds_on              =  1.749883e+00 from=  1.000000e-02 to=  2.000016e-02
+vp_on               =  3.031153e+00 from=  1.000000e-02 to=  2.000016e-02
+vds_pk              =  1.608811e+01 at=  2.100052e-02
+vp_pk               =  1.490499e+01 at=  2.100052e-02
+ifw_pk              =  2.968213e+02 at=  2.100052e-02
+=== weld_loop_turnoff_noFW.cir
+i_pk                =  -2.965904e+02 at=  2.000191e-03
+vds_on              =  1.749883e+00 from=  1.000000e-02 to=  2.000019e-02
+vp_on               =  3.031154e+00 from=  1.000000e-02 to=  2.000019e-02
+vds_pk              =  7.390927e+03 at=  2.100062e-02
+vp_pk               =  2.644230e+01 at=  2.100071e-02
+ifw_pk              =  7.375849e-06 at=  2.100062e-02
+=== pulse_limiter.cir
+t_trip              =  1.281843e-01
+t_trip1             =  4.500083e-02
+v_ct_end1           =  2.179064e+00 at=  4.500030e-02
+v_gin_high          =  4.680698e+00 from=  1.000000e-02 to=  4.004335e-02
+v_gin_after         =  1.299270e-01 at=  3.000435e-01

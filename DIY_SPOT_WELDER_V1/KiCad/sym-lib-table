@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name "DIY_SPOT_WELDER_V1")(type "KiCad")(uri "${KIPRJMOD}/Libraries/DIY_SPOT_WELDER_V1.kicad_sym")(options "")(descr "Project symbols (flattened copies of KiCad 7 library symbols)"))
+)

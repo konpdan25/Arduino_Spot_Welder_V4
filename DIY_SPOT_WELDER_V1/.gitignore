@@ -1,0 +1,16 @@
+# KiCad local/backup files
+*.kicad_prl
+*-bak
+*.bak
+fp-info-cache
+*-backups/
+_autosave-*
+~*.lck
+# Python
+__pycache__/
+*.pyc
+# Firmware build outputs
+Firmware/build/
+Firmware/Tests/build/
+# SPICE raw data
+Calculations/SPICE/*.dat
