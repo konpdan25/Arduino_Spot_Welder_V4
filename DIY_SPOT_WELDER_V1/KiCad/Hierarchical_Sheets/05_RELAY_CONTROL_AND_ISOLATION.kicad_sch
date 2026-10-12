@@ -1788,7 +1788,7 @@
         (font (size 1.27 1.27)) hide
       )
     )
-    (property "Status" "STOCK"
+    (property "Status" "UNVERIFIED"
       (at 36.83 115.57 0)
       (effects
         (font (size 1.27 1.27)) hide
@@ -1806,7 +1806,7 @@
         (font (size 1.27 1.27)) hide
       )
     )
-    (property "Notes" "Base drive ~19 mA from D7 (forced beta ~16 at 300 mA)"
+    (property "Notes" "Base drive ~19 mA from D7 (forced beta ~16 at 300 mA); value not confirmed in stock (else purchase E24 1 % kit)"
       (at 36.83 123.19 0)
       (effects
         (font (size 1.27 1.27)) hide
@@ -2598,7 +2598,7 @@
         (font (size 1.27 1.27)) hide
       )
     )
-    (property "Status" "STOCK"
+    (property "Status" "UNVERIFIED"
       (at 33.02 213.36 0)
       (effects
         (font (size 1.27 1.27)) hide
@@ -2612,6 +2612,12 @@
     )
     (property "Description" "Resistor 4.7k"
       (at 33.02 218.44 0)
+      (effects
+        (font (size 1.27 1.27)) hide
+      )
+    )
+    (property "Notes" "value not confirmed in stock (else purchase E24 1 % kit)"
+      (at 33.02 220.98 0)
       (effects
         (font (size 1.27 1.27)) hide
       )

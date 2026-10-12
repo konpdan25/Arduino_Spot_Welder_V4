@@ -1,0 +1,110 @@
+Reference designator,Quantity,Description,Manufacturer,Manufacturer part number,Electrical specifications,Package / footprint,Available in my inventory,Needs purchasing,"Estimated price (EUR, each)",Datasheet URL,Verification status,Engineering notes
+BT1,1,"Welding source - 12 V VRLA 7 Ah (NOT APPROVED as welding source, see doc 03)",Ritar,RT1270,"Rint <=32 mOhm (DS3), max discharge 70 A / 5 s (DS3), FASTON terminals",off-board: POWER ASSEMBLY,PARTLY / UNKNOWN,IF NOT IN STOCK,,,UNVERIFIED,"[POWER ASSEMBLY, not on PCB] Battery - is connected to the SOURCE bar (=GND star point) with 16 mm2 cable."
+BZ1,1,"Active buzzer 5 V, 12 mm, 7.6 mm pitch",,BUZZER 5V,<=30 mA,Buzzer_12x9.5RM7.6,NO,YES,0.50,,PURCHASE,
+C1,1,Electrolytic capacitor 6800uF,,6800uF,25 V aluminium electrolytic,CP_Radial_D18.0mm_P7.50mm,YES,NO,,,STOCK,"Hold-up logic + gate drive. Footprint assumes 18 mm dia, 7.5 mm pitch - VERIFY physical part"
+C2,1,Electrolytic capacitor 2200uF,,2200uF,25 V aluminium electrolytic,CP_Radial_D16.0mm_P7.50mm,YES,NO,,,STOCK,"Hold-up logic. Footprint assumes 16 mm, 7.5 mm pitch - VERIFY"
+C3 C7 C11 C12 C13 C15 C16 C17 C18 C19 C22 C23 C24 C25 C26 C27 C28 C30 C31 C32,20,Capacitor 100nF,,100nF,"50 V X7R ceramic, 5 mm pitch",C_Disc_D5.0mm_W2.5mm_P5.00mm,PARTLY / UNKNOWN,IF NOT IN STOCK,0.05,,UNVERIFIED,Value must be confirmed in the ceramic stock; else PURCHASE
+C4,1,Electrolytic capacitor 10000uF,,10000uF,25 V aluminium electrolytic,CP_Radial_D22.0mm_P10.00mm_SnapIn,YES,NO,,,STOCK,"Hold-up relay coil. Footprint assumes 22 mm dia, 10 mm pitch - VERIFY"
+C5,1,Electrolytic capacitor 4700uF,,4700uF,25 V aluminium electrolytic,CP_Radial_D16.0mm_P7.50mm,YES,NO,,,STOCK,"Hold-up relay coil. Footprint assumes 16 mm, 7.5 mm pitch - VERIFY"
+C6,1,Capacitor 330nF,,330nF,"50 V X7R ceramic, 5 mm pitch",C_Disc_D5.0mm_W2.5mm_P5.00mm,PARTLY / UNKNOWN,IF NOT IN STOCK,0.05,,UNVERIFIED,7805 input capacitor per datasheet
+C8,1,Electrolytic capacitor 10uF,,10uF,25 V electrolytic 5 mm,CP_Radial_D5.0mm_P2.00mm,NO,YES,0.05,,PURCHASE,
+C9 C10,2,Capacitor 1uF,,1uF,"50 V X7R ceramic, 5 mm pitch",C_Disc_D5.0mm_W2.5mm_P5.00mm,PARTLY / UNKNOWN,IF NOT IN STOCK,0.05,,UNVERIFIED,MCP1700 input (1 uF min per datasheet)
+C14,1,Electrolytic capacitor 47uF,,47uF,25 V low-ESR electrolytic,CP_Radial_D5.0mm_P2.00mm,NO,YES,0.10,,PURCHASE,Local reservoir for gate-charge pulses (~0.5 uC)
+C20 C21,2,Capacitor 10nF,,10nF,"50 V X7R ceramic, 5 mm pitch",C_Disc_D5.0mm_W2.5mm_P5.00mm,PARTLY / UNKNOWN,IF NOT IN STOCK,0.05,,UNVERIFIED,Value must be confirmed in the ceramic stock; else PURCHASE
+C29,1,Timing capacitor 1 uF film +-10 % (no DC-bias loss),WIMA / Kemet,MKS2 1uF 63V (or equiv.),"63 V PET film, +-10 %, 5 mm",C_Rect_L7.2mm_W4.5mm_P5.00mm_FKS2_FKP2_MKS2_MKP2,NO,YES,0.30,,PURCHASE,
+C101,1,Bus capacitor 1000 uF 25 V at the assembly (absorbs battery-lead inductance energy),,1000uF,"25 V electrolytic, low ESR preferred",off-board: POWER ASSEMBLY,YES,NO,,,STOCK,"[POWER ASSEMBLY, not on PCB]"
+CAB1,2,"Welding cable 16 mm2 fine-stranded silicone, 0.5 m each, with lugs",,,16 mm2 Cu,,NO,YES,12,,PURCHASE,Keep both cables together/twisted to minimise loop inductance
+CAB2,2,"Battery cable 16 mm2, 0.3 m each, ring lugs M6",,,16 mm2 Cu,,NO,YES,6,,PURCHASE,RT1270 has FASTON tabs - see doc 03 (not suitable for 300 A)
+CAB3,1,"Signal cable set: 3 twisted pairs AWG24 (gate/Kelvin, drain sense, NTC), 0.15 m",,,,,NO,YES,2,,PURCHASE,
+D1,1,Schottky 3 A 40 V - logic/gate-drive hold-up isolation,various,1N5822,"3 A, 40 V, VF ~0.45 V @ 0.4 A",D_DO-201AD_P15.24mm_Horizontal,NO,YES,0.20,https://www.vishay.com/docs/88526/1n5820.pdf,PURCHASE,Blocks reverse polarity and holds VHOLD_LOGIC while the battery collapses during a weld
+D2,1,Schottky 3 A 40 V - relay hold-up isolation,various,1N5822,"3 A, 40 V",D_DO-201AD_P15.24mm_Horizontal,NO,YES,0.20,https://www.vishay.com/docs/88526/1n5820.pdf,PURCHASE,
+D3,1,"TVS unidirectional 15 V standoff, 600 W",Littelfuse,SMBJ15A,"VRWM 15 V, VBR 16.7-18.5 V, VC 24.4 V @ 24.6 A",D_SMB,NO,YES,0.30,https://www.littelfuse.com/products/tvs-diodes/surface-mount/smbj,PURCHASE,SMBJ24CA (stock) is NOT used here: its clamp (38.9 V) exceeds the 25 V capacitor and 20 V TC4422 ratings
+D4,1,Zener 15 V 1.5 W - gate bus clamp (IRLZ44N VGS max +-16 V),Vishay,BZY97C15,"Vz 13.8-15.6 V, 1.5 W",D_DO-41_SOD81_P10.16mm_Horizontal,PARTLY / UNKNOWN,IF NOT IN STOCK,,https://www.vishay.com/docs/85614/bzy97.pdf,UNVERIFIED,Confirm C15 value is in the BZY97 stock; otherwise purchase BZY97C15 or 1.5KE15A
+D5,1,Coil clamp diode (in series with D6 zener for fast release),various,1N4148,"100 V, IFRM 450 mA",D_DO-35_SOD27_P7.62mm_Horizontal,YES,NO,,https://www.vishay.com/docs/81857/1n4148.pdf,STOCK,
+D6,1,Zener 15 V - coil clamp (V_CE peak ~ V_coil + 15.7 V < 45 V),Vishay,BZY97C15,1.5 W,D_DO-41_SOD81_P10.16mm_Horizontal,PARTLY / UNKNOWN,IF NOT IN STOCK,,https://www.vishay.com/docs/85614/bzy97.pdf,UNVERIFIED,Confirm C15 value is in stock
+D7,1,Buzzer flyback diode,,1N4148,,D_DO-35_SOD27_P7.62mm_Horizontal,YES,NO,,,STOCK,
+D8,1,Limiter reset diode,,1N4148,,D_DO-35_SOD27_P7.62mm_Horizontal,YES,NO,,,STOCK,
+D101,1,Dual Schottky 2x15 A 45 V SOT-93 - free-wheel diode across the welding cables,STMicroelectronics,STPS3045CP,"VRRM 45 V, IF(AV) 2x15 A, IFSM 220 A (10 ms) per diode",off-board: POWER ASSEMBLY,YES,NO,,https://www.st.com/resource/en/datasheet/stps3045c.pdf,STOCK,"[POWER ASSEMBLY, not on PCB] POWER ASSEMBLY: anodes to drain bar, cathode (tab) to P_BUS. Clamps V_DS to V_P+VF at turn-off (SPICE: 16 V instead of avalanche)."
+D102,1,Bidirectional TVS 24 V 600 W across the bus,Littelfuse / various,SMBJ24CA-H,"VRWM 24 V, VBR 26.7 V min, VC 38.9 V",off-board: POWER ASSEMBLY,YES,NO,,https://www.littelfuse.com/products/tvs-diodes/surface-mount/smbj,STOCK,"[POWER ASSEMBLY, not on PCB] Secondary clamp only; the 1000 uF capacitor takes the energy."
+DISP1,1,"OLED 0.96 in 128x64 yellow/blue, SSD1306, I2C",Midas,MDOB128064WV-YBI,VCC 2.8-5.2 V (pin table) / 3.3 V typ,COB 4-pin,YES,NO,,https://midasdisplays.com/wp-content/uploads/2024/12/MDOB128064WV-YBI.pdf,STOCK,Spec sheet inconsistent on VCC range; powered from 3.3 V
+E1,1,"Positive welding cable + copper electrode (16 mm2, 0.5 m)",,ELECTRODE+,,off-board: POWER ASSEMBLY,NO,YES,,,PURCHASE,"[POWER ASSEMBLY, not on PCB]"
+E2,1,"Negative welding cable + copper electrode (16 mm2, 0.5 m), bolted to the drain bar",,ELECTRODE-,,off-board: POWER ASSEMBLY,NO,YES,,,PURCHASE,"[POWER ASSEMBLY, not on PCB]"
+ELEC1,2,Copper welding electrodes (solid Cu 10 mm2 or W/Cu tips),,,,,NO,YES,8,,PURCHASE,
+ENC1,1,EC11 rotary encoder module with push switch,,EC11 module,,module,YES,NO,,,STOCK,Pin order UNVERIFIED
+ENCL1,1,"Enclosure, non-conductive (or earthed metal with insulated busbars)",,,,,NO,YES,20,,PURCHASE,
+F1,1,Fuse 5x20 mm time-lag 3.15 A + PCB holder,,T3.15A,5x20 mm T3.15A 250 V; I2t >> 1.6 A2s inrush,Fuseholder_Cylinder-5x20mm_Schurter_0031_8201_Horizontal_Open,NO,YES,1.00,,PURCHASE,Board-level fuse; the tap wire itself is fused at the source end (F_TAP)
+F101,1,"Main fuse ANL/MIDI 150 A + holder, mounted within 150 mm of the battery +",,ANL 150A,"32 V DC, breaking capacity >= 2 kA; pre-arc I2t must be >= 5x weld-pulse I2t (doc 03)",off-board: POWER ASSEMBLY,NO,YES,10,,PURCHASE,"[POWER ASSEMBLY, not on PCB] Rating PROVISIONAL - final choice needs the fuse I2t datasheet and the measured source current"
+F102,1,Inline blade fuse 3 A at the P_BUS tap (protects the thin supply wire),,3A blade,,off-board: POWER ASSEMBLY,NO,YES,2,,PURCHASE,"[POWER ASSEMBLY, not on PCB]"
+FOOT1,1,"Foot switch, normally open, with 2-core cable",,,,,NO,YES,8,,PURCHASE,
+H1 H2 H3 H4,4,"Mounting hole M3, isolated (use nylon spacers)",,M3,,MountingHole_3.2mm_M3,NO,YES,0,,PURCHASE,
+J1,1,"Screw terminal 2-pole 5.08 mm, control supply input",,PWR_IN,"2-pole, 5.08 mm, >=10 A","TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal",NO,YES,0.60,,PURCHASE,"Pin1 = fused tap from P_BUS (F_TAP), Pin2 = GND from SOURCE bar star point"
+J2,1,Molex KK 1x4 - two-pole E-STOP + ARM series chain,Molex,22-27-2041 / 22-01-3047,,Molex_KK-254_AE-6410-04A_1x04_P2.54mm_Vertical,NO,YES,0.60,,PURCHASE,"Pole A (1->2) feeds the relay coil, pole B (3->4) feeds the gate driver. Opening either pole removes gate drive and/or opens the relay independently of the MCU."
+J3,1,"Molex KK 254 1x6 header + housing: gate twisted pair, drain/electrode sense, heatsink NTC",Molex,22-27-2061 / 22-01-3067,"2.54 mm, 2.5 A",Molex_KK-254_AE-6410-06A_1x06_P2.54mm_Vertical,NO,YES,0.80,,PURCHASE,"Use twisted pairs: (1,2) gate/Kelvin-source, (3,6), (5,6). Max length 150 mm."
+J4,1,Screw terminal 2-pole 5.08 mm - relay coil,,RELAY_COIL,,"TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal",NO,YES,0.60,,PURCHASE,
+J5,1,Molex KK 1x2 - foot switch (normally open),,FOOT_SWITCH,,Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical,NO,YES,0.40,,PURCHASE,
+J6,1,"Female header 1x4 for MDOB128064WV-YBI (pin1 VCC, 2 GND, 3 SCL, 4 SDA)",,OLED,,PinSocket_1x04_P2.54mm_Vertical,NO,YES,0.20,,PURCHASE,"Display: Midas MDOB128064WV-YBI (STOCK), SSD1306 I2C 0x3C. Pin order per Midas spec (VCC,GND,SCL,SDA) - re-check on the physical module before power-up."
+J7,1,"Female header 1x5 for EC11 encoder module (GND, +, SW, DT, CLK)",,ENCODER,,PinSocket_1x05_P2.54mm_Vertical,NO,YES,0.20,,PURCHASE,Encoder module pin order is UNVERIFIED - check the silk of the stock module and adapt the cable.
+K101,1,"Isolation relay (carry-only, never switched under weld current by design)",,RELAY 12V ~100A (unknown),"12 V coil ~300 mA, contacts marked ~100 A; DC rating, make/break, drop-out voltage UNKNOWN",off-board: POWER ASSEMBLY,PARTLY / UNKNOWN,IF NOT IN STOCK,,,UNVERIFIED,"[POWER ASSEMBLY, not on PCB] May only be used after the tests in RELEASE_CHECKLIST.md (contact resistance, drop-out voltage, operate/release time). Replacement: rated DC contactor."
+LED1,1,LED 3 mm green - auxiliary 5 V present,,GREEN 5V_AUX,"3 mm, 20 mA max",LED_D3.0mm,NO,YES,0.05,,PURCHASE,
+LED2,1,LED 3 mm yellow - gate drive supply live (hardware indication),,YELLOW ARMED,,LED_D3.0mm,NO,YES,0.05,,PURCHASE,
+LED3,1,LED 3 mm red - fault,,RED FAULT,,LED_D3.0mm,NO,YES,0.05,,PURCHASE,
+LED4,1,LED 3 mm green - ready,,GREEN READY,,LED_D3.0mm,NO,YES,0.05,,PURCHASE,
+MECH1,1,Drain copper bar (MOSFET tabs + heatsink + negative cable lug),,,Cu 200x25x5 mm (provisional),busbar,NO,YES,15,,PURCHASE,Electrically at electrode potential: insulate from enclosure
+MECH2,1,"Source copper bar (MOSFET source legs, battery-, control GND star point)",,,Cu 200x15x3 mm (provisional),busbar,NO,YES,10,,PURCHASE,Single-point ground for control board
+MECH3,1,Heatsink for drain bar,,,Rth <= 1.5 K/W (estimate for 26 W at 1 weld/2 s),,NO,YES,10,,PURCHASE,Thermal pad must not be needed: drain bar is the tab potential - heatsink then also at electrode potential; or use insulating pad >=1.5 kV
+Q1,1,NPN 45 V 800 mA - relay coil low-side switch,various,BC337-40,"VCEO 45 V, IC 800 mA, TO-92 C-B-E",TO-92_Inline_Wide,YES,NO,,https://www.onsemi.com/pdf/datasheet/bc337-d.pdf,STOCK,
+Q2,1,NPN buzzer driver,various,BC547B,45 V 100 mA TO-92 C-B-E,TO-92_Inline_Wide,YES,NO,,https://www.onsemi.com/pdf/datasheet/bc546-d.pdf,STOCK,
+Q101 Q102 Q103 Q104 Q105 Q106,6,"N-MOSFET 55 V logic-level TO-220 (weld switch, 6 in parallel)",Infineon (IR),IRLZ44NPBF,"VDSS 55 V, RDS(on) <=22 mOhm @10 V, IDM 160 A, EAS 210 mJ, RthJC 1.8 K/W",off-board: POWER ASSEMBLY,YES,NO,,https://www.infineon.com/dgdl/irlz44npbf.pdf?fileId=5546d462533600a40153567206892720,STOCK,"[POWER ASSEMBLY, not on PCB] POWER ASSEMBLY: tab (drain) bolted/soldered to the drain copper bar; source legs to source bar. Verify genuine parts (counterfeit risk)."
+R1,1,Resistor 1.5R 5W,,1.5R 5W,"5 W wirewound, 5 %",R_Axial_Power_L20.0mm_W6.4mm_P25.40mm,NO,YES,0.50,,PURCHASE,"Inrush / fault limiting into 24.7 mF hold-up banks (peak ~8.6 A, 2.4 J at connection)"
+R2 R23 R25 R27 R29 R30 R32 R33 R35 R41,10,Resistor 1k,,1k,0.25 W 1 % metal film,R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,PARTLY / UNKNOWN,IF NOT IN STOCK,0.02,,UNVERIFIED,value not confirmed in stock (else purchase E24 1 % kit)
+R3,1,Resistor 2.2R,,2.2R,0.25 W 1 % metal film,R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,NO,YES,0.02,,PURCHASE,"Common gate resistor: damps cable ringing, limits clamp current"
+R4 R6 R11 R13 R15 R17 R19 R22 R24 R26 R28 R31 R34 R36 R40 R42 R46 R49 R52 R53 R54,21,Resistor 10k,,10k,0.25 W 1 % metal film,R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,YES,NO,0.02,,STOCK,Gate bus pull-down on control board
+R5,1,Resistor 220R,,220R,0.25 W 1 % metal film,R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,PARTLY / UNKNOWN,IF NOT IN STOCK,0.02,,UNVERIFIED,Base drive ~19 mA from D7 (forced beta ~16 at 300 mA); value not confirmed in stock (else purchase E24 1 % kit)
+R7 R20 R21 R43 R48,5,Resistor 4.7k,,4.7k,0.25 W 1 % metal film,R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,PARTLY / UNKNOWN,IF NOT IN STOCK,0.02,,UNVERIFIED,value not confirmed in stock (else purchase E24 1 % kit)
+R10 R12 R14 R16 R18,5,Resistor 33k,,33k,0.25 W 1 % metal film,R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,PARTLY / UNKNOWN,IF NOT IN STOCK,0.02,,UNVERIFIED,ADC_VBAT divider top; value not confirmed in stock (else purchase E24 1 % kit)
+R44,1,Resistor 2.2k,,2.2k,0.25 W 1 % metal film,R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,PARTLY / UNKNOWN,IF NOT IN STOCK,0.02,,UNVERIFIED,MCU -> TC4422 input; LM393 outputs can override (wired-AND); value not confirmed in stock (else purchase E24 1 % kit)
+R45 R50 R51,3,Resistor 22k,,22k,0.25 W 1 % metal film,R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,PARTLY / UNKNOWN,IF NOT IN STOCK,0.02,,UNVERIFIED,Default-OFF pull-down: TC4422 input low while MCU is reset/unpowered; value not confirmed in stock (else purchase E24 1 % kit)
+R47,1,Resistor 68k,,68k,0.25 W 1 % metal film,R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,PARTLY / UNKNOWN,IF NOT IN STOCK,0.02,,UNVERIFIED,"Pulse limiter timing (window 63-96 ms, see doc 03); value not confirmed in stock (else purchase E24 1 % kit)"
+R101 R102 R103 R104 R105 R106,6,"Gate resistor 10 R per MOSFET (anti-oscillation, current sharing of gate drive)",,10R,0.6 W metal film,off-board: POWER ASSEMBLY,NO,YES,0.02,,PURCHASE,"[POWER ASSEMBLY, not on PCB]"
+R111 R112 R113 R114 R115 R116,6,Gate-source pull-down per MOSFET (off if gate wire breaks),,10k,0.25 W,off-board: POWER ASSEMBLY,YES,NO,,,STOCK,"[POWER ASSEMBLY, not on PCB]"
+S101,1,"Battery isolator switch (manual emergency disconnect), >=300 A intermittent",,MAIN DISCONNECT,,off-board: POWER ASSEMBLY,NO,YES,10,,PURCHASE,"[POWER ASSEMBLY, not on PCB]"
+S102,1,"Emergency stop mushroom, 2 NC contacts (symbol drawn as generic DPST)",,E-STOP 2NC,,off-board: POWER ASSEMBLY,NO,YES,6,,PURCHASE,"[POWER ASSEMBLY, not on PCB]"
+S103,1,"ARM key switch or guarded toggle, 2 NO contacts",,ARM KEY 2NO,,off-board: POWER ASSEMBLY,NO,YES,6,,PURCHASE,"[POWER ASSEMBLY, not on PCB]"
+SOCK1,2,Female header 1x15 2.54 mm for Arduino Nano,,,,,NO,YES,0.60,,PURCHASE,
+SOCK2,2,IC socket DIP-8,,,,,NO,YES,0.20,,PURCHASE,
+SOCK3,1,IC socket DIP-14,,,,,NO,YES,0.20,,PURCHASE,
+SW1,1,Tactile switch 6x6 mm - fault acknowledge,,ACK / RESET FAULT,,SW_PUSH_6mm,YES,NO,,,STOCK,
+TH101,1,NTC 10 k on the drain bar (electrically insulated!),,10k B3950,"10 k @25 C, B ~3950 (verify from stock)",off-board: POWER ASSEMBLY,PARTLY / UNKNOWN,IF NOT IN STOCK,,,UNVERIFIED,"[POWER ASSEMBLY, not on PCB] Drain bar is at electrode potential: bond the NTC with Kapton + thermal epoxy; never connect to the bar."
+TP1 TP2 TP3,3,Test point GND,,GND,"wire loop, 1.0 mm drill",TestPoint_Loop_D2.50mm_Drill1.0mm,NO,YES,0.05,,PURCHASE,
+TP4,1,Test point VBAT_F,,VBAT_F,"wire loop, 1.0 mm drill",TestPoint_Loop_D2.50mm_Drill1.0mm,NO,YES,0.05,,PURCHASE,
+TP5,1,Test point VHOLD_LOGIC,,VHOLD_LOGIC,"wire loop, 1.0 mm drill",TestPoint_Loop_D2.50mm_Drill1.0mm,NO,YES,0.05,,PURCHASE,
+TP6,1,Test point VHOLD_RELAY,,VHOLD_RELAY,"wire loop, 1.0 mm drill",TestPoint_Loop_D2.50mm_Drill1.0mm,NO,YES,0.05,,PURCHASE,
+TP7,1,Test point +5V_AUX,,+5V_AUX,"wire loop, 1.0 mm drill",TestPoint_Loop_D2.50mm_Drill1.0mm,NO,YES,0.05,,PURCHASE,
+TP8,1,Test point +5V_MCU,,+5V_MCU,"wire loop, 1.0 mm drill",TestPoint_Loop_D2.50mm_Drill1.0mm,NO,YES,0.05,,PURCHASE,
+TP9,1,Test point +3V3,,+3V3,"wire loop, 1.0 mm drill",TestPoint_Loop_D2.50mm_Drill1.0mm,NO,YES,0.05,,PURCHASE,
+TP10,1,Test point VDRV,,VDRV,"wire loop, 1.0 mm drill",TestPoint_Loop_D2.50mm_Drill1.0mm,NO,YES,0.05,,PURCHASE,
+TP11,1,Test point GATE_CMD,,GATE_CMD,"wire loop, 1.0 mm drill",TestPoint_Loop_D2.50mm_Drill1.0mm,NO,YES,0.05,,PURCHASE,
+TP12,1,Test point GIN,,GIN,"wire loop, 1.0 mm drill",TestPoint_Loop_D2.50mm_Drill1.0mm,NO,YES,0.05,,PURCHASE,
+TP13,1,Test point GATE_OUT,,GATE_OUT,"wire loop, 1.0 mm drill",TestPoint_Loop_D2.50mm_Drill1.0mm,NO,YES,0.05,,PURCHASE,
+TP14,1,Test point PL_CT,,PL_CT,"wire loop, 1.0 mm drill",TestPoint_Loop_D2.50mm_Drill1.0mm,NO,YES,0.05,,PURCHASE,
+TP15,1,Test point UV_SENSE,,UV_SENSE,"wire loop, 1.0 mm drill",TestPoint_Loop_D2.50mm_Drill1.0mm,NO,YES,0.05,,PURCHASE,
+TP16,1,Test point DRAIN_BUS,,DRAIN_BUS,"wire loop, 1.0 mm drill",TestPoint_Loop_D2.50mm_Drill1.0mm,NO,YES,0.05,,PURCHASE,
+TP17,1,Test point TEMP_ALERT,,TEMP_ALERT,"wire loop, 1.0 mm drill",TestPoint_Loop_D2.50mm_Drill1.0mm,NO,YES,0.05,,PURCHASE,
+U1,1,"Arduino Nano V3 compatible module (ATmega328P, 16 MHz, Optiboot bootloader)",Arduino / compatible,A000005 (or compatible),"5 V logic, VIN 7-12 V recommended",Arduino_Nano,NO,YES,5-22,https://docs.arduino.cc/hardware/nano,PURCHASE,Mounted in 2x15 female headers. Must run the 'new' Optiboot bootloader (watchdog-safe). Powered via VIN from VHOLD_LOGIC; its on-board 5 V (net +5V_MCU) is ADC reference and NTC pull-up supply.
+U2,1,"Linear regulator 5 V 1 A (auxiliary 5 V: HCT14, comparator references, buzzer, LEDs, 3.3 V LDO)",ST / various,L7805CV (assumed),"Vin 7-35 V, 1.5 A, TO-220",TO-220-3_Vertical,YES,NO,,https://www.st.com/resource/en/datasheet/l78.pdf,STOCK,Exact manufacturer of stock part unknown; TO-220 pinout IN-GND-OUT assumed (standard)
+U3,1,"Dual comparator, open collector - A: hardware pulse-length limiter, B: gate-drive UVLO",TI/ST (assumed),LM393P (PDIP-8 assumed),"2-36 V, Vos 5 mV max, sink 6 mA",DIP-8_W7.62mm_Socket,YES,NO,,https://www.ti.com/lit/ds/symlink/lm393.pdf,STOCK,Package of stock part UNVERIFIED (PDIP-8 assumed). Outputs are wired-AND onto GIN.
+U4,1,"9 A non-inverting low-side MOSFET driver, PDIP-8 (in socket)",Microchip,TC4422CPA,"VDD 4.5-18 V, 9 A peak, TTL/CMOS input (VIH 2.4 V), 300 mV hysteresis",DIP-8_W7.62mm_Socket,YES,NO,,https://ww1.microchip.com/downloads/en/DeviceDoc/20001420F.pdf,STOCK,Non-inverting => input pull-down gives OFF by default. TC4421 (inverting) is REJECTED for this function.
+U5,1,"Hex Schmitt-trigger inverter, HCT (TTL thresholds), PDIP-14 in socket",Nexperia/TI (assumed),74HCT14N,VCC 4.5-5.5 V,DIP-14_W7.62mm_Socket,YES,NO,,https://assets.nexperia.com/documents/data-sheet/74HC_HCT14.pdf,STOCK,Symbol 74xx:74HC14 used (identical pinout)
+U6,1,"LDO 3.3 V 250 mA for OLED, MCP9804 and I2C pull-ups",Microchip,MCP1700-3302E/TO,"Vin 2.3-6 V, 250 mA, TO-92 (1=GND 2=VIN 3=VOUT)",TO-92_Inline_Wide,NO,YES,0.40,https://ww1.microchip.com/downloads/en/DeviceDoc/20001826D.pdf,PURCHASE,
+U7,1,"Digital temperature sensor +-0.25 C typ, I2C address 0x18 (board/ambient temperature)",Microchip,MCP9804-E/MS (package assumed),"2.7-5.5 V, MSOP-8",MSOP-8_3x3mm_P0.65mm,PARTLY / UNKNOWN,IF NOT IN STOCK,,https://ww1.microchip.com/downloads/en/DeviceDoc/22203C.pdf,UNVERIFIED,Confirm the stock package (MSOP-8 vs DFN-8). Alert output routed to a test point for future hardware use.
+X1,1,MOSFET 500 V 20 A TO-247,IXYS,IXFH20N50P3,RDS(on) ~0.3 Ohm,TO-247,YES,NO,,,REJECTED,[NOT USED IN V1] RDS(on) >50x too high for weld switching (0.3 Ohm x 300 A = 90 V drop - impossible)
+X2,1,MOSFET 600 V 6 A TO-220,ST,STP6NK60,RDS(on) ~1.2 Ohm,TO-220,YES,NO,,,REJECTED,[NOT USED IN V1] RDS(on) far too high; high-voltage part
+X3,1,MOSFET driver 9 A inverting,Microchip,TC4421CPA,,PDIP-8,YES,NO,,,REJECTED,[NOT USED IN V1] Inverting: a pull-down on its input would turn the MOSFETs ON. Kept as spare only.
+X4,1,H-bridge driver 3.6 A,TI,DRV8872,6.5-45 V,HSOP-8,YES,NO,,https://www.ti.com/lit/ds/symlink/drv8872.pdf,REJECTED,[NOT USED IN V1] Relay coil needs no reversal; a BJT is simpler; H-bridge gives no safety advantage
+X5,1,Stepper/H-bridge driver,TI,DRV8816,,HTSSOP,YES,NO,,https://www.ti.com/lit/ds/symlink/drv8816.pdf,REJECTED,[NOT USED IN V1] Not needed
+X6,1,Dual H-bridge 1.5 A,TI,DRV8833,2.7-10.8 V,HTSSOP,YES,NO,,https://www.ti.com/lit/ds/symlink/drv8833.pdf,REJECTED,[NOT USED IN V1] Max 10.8 V supply < 12 V battery
+X7,1,H-bridge 3.6 A,TI,DRV8870,6.5-45 V,HSOP-8,YES,NO,,https://www.ti.com/lit/ds/symlink/drv8870.pdf,REJECTED,[NOT USED IN V1] Not needed (see DRV8872)
+X8,1,Optocoupler,Sharp/various,PC817,CTR 50-600 %,DIP-4,YES,NO,,,STOCK,[NOT USED IN V1] Not used in V1 (common ground is acceptable for a low-side switch); reserve for an isolated foot-switch input
+X9,1,NPN 2N2222,various,2N2222,40 V 600 mA,TO-92 (E-B-C!),YES,NO,,,STOCK,[NOT USED IN V1] Not used; note E-B-C pinout differs from BC337 (C-B-E)
+X10,1,Beetle ESP32-C3 board (NOT a timer module),DFRobot,DFR0868,"ESP32-C3, 3.3 V I/O",module,YES,NO,,https://wiki.dfrobot.com/SKU_DFR0868_Beetle_ESP32_C3,STOCK,"[NOT USED IN V1] Inventory described it as 'adjustable timer module' - it is an ESP32-C3 dev board. Alternative MCU (not selected: 3.3 V I/O, boot-time GPIO glitches, pinout not verified here)"
+X11,1,Relay coil H-bridge concept,,,,,YES,NO,,,REJECTED,"[NOT USED IN V1] Relay as pulse switch rejected (timing 5-15 ms, bounce, arcing) - see doc 02"

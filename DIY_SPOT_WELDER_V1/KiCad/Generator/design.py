@@ -75,7 +75,11 @@ def part(ref, sym, value, fp, sheet, pins, status, desc, mfr="", mpn="", spec=""
                            notes=notes, on_board=on_board, dnp=dnp, price=price))
 
 
-def R(ref, val, a, b, sheet, notes="", status="STOCK", spec="0.25 W 1 % metal film", fp=None, mpn="", price="0.02"):
+def R(ref, val, a, b, sheet, notes="", status=None, spec="0.25 W 1 % metal film", fp=None, mpn="", price="0.02"):
+    if status is None:   # only 10k is confirmed in the resistor stock
+        status = "STOCK" if val == "10k" else "UNVERIFIED"
+        if status == "UNVERIFIED":
+            notes = (notes + "; " if notes else "") + "value not confirmed in stock (else purchase E24 1 % kit)"
     part(ref, "Device:R", val, fp or FP["R"], sheet, {"1": a, "2": b}, status,
          f"Resistor {val}", spec=spec, notes=notes, mpn=mpn, price=price)
 

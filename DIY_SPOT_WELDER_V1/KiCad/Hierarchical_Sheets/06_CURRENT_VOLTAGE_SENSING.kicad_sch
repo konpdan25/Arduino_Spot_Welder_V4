@@ -297,7 +297,7 @@
         (font (size 1.27 1.27)) hide
       )
     )
-    (property "Status" "STOCK"
+    (property "Status" "UNVERIFIED"
       (at 34.29 71.12 0)
       (effects
         (font (size 1.27 1.27)) hide
@@ -315,7 +315,7 @@
         (font (size 1.27 1.27)) hide
       )
     )
-    (property "Notes" "ADC_VBAT divider top"
+    (property "Notes" "ADC_VBAT divider top; value not confirmed in stock (else purchase E24 1 % kit)"
       (at 34.29 78.74 0)
       (effects
         (font (size 1.27 1.27)) hide
@@ -676,7 +676,7 @@
         (font (size 1.27 1.27)) hide
       )
     )
-    (property "Status" "STOCK"
+    (property "Status" "UNVERIFIED"
       (at 38.1 109.22 0)
       (effects
         (font (size 1.27 1.27)) hide
@@ -694,7 +694,7 @@
         (font (size 1.27 1.27)) hide
       )
     )
-    (property "Notes" "ADC_VDRAIN divider top"
+    (property "Notes" "ADC_VDRAIN divider top; value not confirmed in stock (else purchase E24 1 % kit)"
       (at 38.1 116.84 0)
       (effects
         (font (size 1.27 1.27)) hide
@@ -1055,7 +1055,7 @@
         (font (size 1.27 1.27)) hide
       )
     )
-    (property "Status" "STOCK"
+    (property "Status" "UNVERIFIED"
       (at 36.83 147.32 0)
       (effects
         (font (size 1.27 1.27)) hide
@@ -1073,7 +1073,7 @@
         (font (size 1.27 1.27)) hide
       )
     )
-    (property "Notes" "ADC_VELEC divider top"
+    (property "Notes" "ADC_VELEC divider top; value not confirmed in stock (else purchase E24 1 % kit)"
       (at 36.83 154.94 0)
       (effects
         (font (size 1.27 1.27)) hide
@@ -1434,7 +1434,7 @@
         (font (size 1.27 1.27)) hide
       )
     )
-    (property "Status" "STOCK"
+    (property "Status" "UNVERIFIED"
       (at 33.02 185.42 0)
       (effects
         (font (size 1.27 1.27)) hide
@@ -1452,7 +1452,7 @@
         (font (size 1.27 1.27)) hide
       )
     )
-    (property "Notes" "ADC_VDRV divider top"
+    (property "Notes" "ADC_VDRV divider top; value not confirmed in stock (else purchase E24 1 % kit)"
       (at 33.02 193.04 0)
       (effects
         (font (size 1.27 1.27)) hide
@@ -1813,7 +1813,7 @@
         (font (size 1.27 1.27)) hide
       )
     )
-    (property "Status" "STOCK"
+    (property "Status" "UNVERIFIED"
       (at 40.64 223.52 0)
       (effects
         (font (size 1.27 1.27)) hide
@@ -1831,7 +1831,7 @@
         (font (size 1.27 1.27)) hide
       )
     )
-    (property "Notes" "ADC_VHOLD divider top"
+    (property "Notes" "ADC_VHOLD divider top; value not confirmed in stock (else purchase E24 1 % kit)"
       (at 40.64 231.14 0)
       (effects
         (font (size 1.27 1.27)) hide

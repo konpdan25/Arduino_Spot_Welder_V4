@@ -1,5 +1,5 @@
 DIY_SPOT_WELDER_V1 - schematic connectivity check (custom script, NOT KiCad ERC)
-Netlist: /tmp/claude-0/kc/t.net
+Netlist: Reports/Validation/DIY_SPOT_WELDER_V1_kicad7_export.net (kicad-cli 7.0.11 sch export netlist)
 
 [1] Parity: kicad-cli exported netlist vs. design.py (on-board parts)
   nets compared: 64, on-board components: 133

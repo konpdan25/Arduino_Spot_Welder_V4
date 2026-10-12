@@ -13,8 +13,8 @@ vds_pk              =  7.390927e+03 at=  2.100062e-02
 vp_pk               =  2.644230e+01 at=  2.100071e-02
 ifw_pk              =  7.375849e-06 at=  2.100062e-02
 === pulse_limiter.cir
-t_trip              =  1.281843e-01
-t_trip1             =  4.500083e-02
+t_trip              =  1.281839e-01
+t_trip1             =  4.500082e-02
 v_ct_end1           =  2.179064e+00 at=  4.500030e-02
-v_gin_high          =  4.680698e+00 from=  1.000000e-02 to=  4.004335e-02
-v_gin_after         =  1.299270e-01 at=  3.000435e-01
+v_gin_high          =  4.454367e+00 from=  1.000000e-02 to=  4.004335e-02
+v_gin_after         =  1.297440e-01 at=  3.000715e-01

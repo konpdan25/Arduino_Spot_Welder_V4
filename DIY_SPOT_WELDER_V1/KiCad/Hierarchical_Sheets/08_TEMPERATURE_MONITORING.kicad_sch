@@ -574,7 +574,7 @@
         (font (size 1.27 1.27)) hide
       )
     )
-    (property "Status" "STOCK"
+    (property "Status" "UNVERIFIED"
       (at 34.29 82.55 0)
       (effects
         (font (size 1.27 1.27)) hide
@@ -592,7 +592,7 @@
         (font (size 1.27 1.27)) hide
       )
     )
-    (property "Notes" "series protection for the off-board NTC wire"
+    (property "Notes" "series protection for the off-board NTC wire; value not confirmed in stock (else purchase E24 1 % kit)"
       (at 34.29 90.17 0)
       (effects
         (font (size 1.27 1.27)) hide

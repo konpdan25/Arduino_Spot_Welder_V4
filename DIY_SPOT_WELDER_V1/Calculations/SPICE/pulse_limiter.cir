@@ -1,14 +1,14 @@
 * DIY_SPOT_WELDER_V1 - hardware pulse-length limiter + gate-drive UVLO (behavioural comparators)
-* MCU GATE_CMD (5 V) -> R_SER 2.2k -> node GIN (TC4422 IN) with 47k pull-down
+* MCU GATE_CMD (5 V) -> R_SER 2.2k -> node GIN (TC4422 IN) with 22k pull-down
 * RC timer: GATE_CMD -> R 68k -> CT 1u ; discharge diode 1N4148 + 4.7k back to GATE_CMD
 * U1A (LM393): IN- = CT, IN+ = VTH = 5V*22k/32k ; open-collector output on GIN
-* U1B (LM393): IN+ = VDRV*10k/(27k+10k) , IN- = 2.5 V (from 5V via 10k/10k) ; OC output on GIN
+* U1B (LM393): IN+ = VDRV*10k/(22k+10k) , IN- = 2.5 V (from 5V via 10k/10k) ; OC output on GIN
 .param VDRV_LOW=0
 V5    v5 0 DC 5
 * MCU command: 40 ms pulse, 10 ms gap, then stuck HIGH (simulated firmware lock-up) at 60 ms
 Vcmd  cmd 0 PWL(0 0 5m 0 5.001m 4.9 45m 4.9 45.001m 0 55m 0 55.001m 4.9 400m 4.9)
 Rser  cmd gin 2.2k
-Rpd   gin 0 47k
+Rpd   gin 0 22k
 Rt    cmd ct 68k
 Rdis  ct dd 4.7k
 Ddis  dd cmd D1N4148
@@ -17,7 +17,7 @@ Rth1  v5 vth 10k
 Rth2  vth 0 22k
 * gate driver supply drops at 300 ms (to test UVLO) - irrelevant while limiter is tripped
 Vdrv  vdrv 0 PWL(0 11.5 300m 11.5 300.1m 7.0 400m 7.0)
-Ru1   vdrv vsen 27k
+Ru1   vdrv vsen 22k
 Ru2   vsen 0 10k
 Rr1   v5 vref 10k
 Rr2   vref 0 10k

@@ -3723,7 +3723,7 @@
         (font (size 1.27 1.27)) hide
       )
     )
-    (property "Status" "STOCK"
+    (property "Status" "UNVERIFIED"
       (at 87.63 167.64 0)
       (effects
         (font (size 1.27 1.27)) hide
@@ -3737,6 +3737,12 @@
     )
     (property "Description" "Resistor 1k"
       (at 87.63 172.72 0)
+      (effects
+        (font (size 1.27 1.27)) hide
+      )
+    )
+    (property "Notes" "value not confirmed in stock (else purchase E24 1 % kit)"
+      (at 87.63 175.26 0)
       (effects
         (font (size 1.27 1.27)) hide
       )
