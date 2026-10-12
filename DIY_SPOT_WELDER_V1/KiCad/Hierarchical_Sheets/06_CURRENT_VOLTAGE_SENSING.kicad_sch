@@ -2160,7 +2160,7 @@
       )
     )
   )
-  (text "SENSING: five 33k/10k dividers (k = 4.30), 100 nF filters. During a pulse the firmware switches to the 1.1 V"
+  (text "SENSING: five 33k/10k dividers (k = 4.30), 100 nF filters, ADC reference = Nano AVCC (21 mV/LSB at the divider input)."
     (at 20 25.4 0)
     (effects
       (font (size 1.8 1.8) bold)
@@ -2168,7 +2168,7 @@
     )
     (uuid f2913226-59bc-5264-ba69-4abceb769889)
   )
-  (text "reference (4.6 mV/LSB at the input of the divider ~ 20 mV) to estimate V_DS and the battery sag."
+  (text "During a pulse the firmware samples V_DS (~1.7 V -> ~80 LSB) and the battery sag continuously."
     (at 20 27.94 0)
     (effects
       (font (size 1.5 1.5))

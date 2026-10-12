@@ -1,0 +1,16 @@
+AVR build: avr-gcc 7.3.0, Arduino AVR core 1.8.6 (Ubuntu package), Adafruit_SSD1306 2.5.10, Adafruit-GFX 1.11.9, Adafruit_BusIO 1.16.1
+Command: Firmware/build_avr.sh
+AVR Memory Usage
+----------------
+Device: atmega328p
+
+Program:   26310 bytes (80.3% Full)
+(.text + .data + .bootloader)
+
+Data:        553 bytes (27.0% Full)
+(.data + .bss + .noinit)
+
+
+
+Runtime heap: Adafruit_SSD1306 allocates 1024 B frame buffer at begin() -> ~1577 B of 2048 B used before stack.
+Sketch warnings (-Wall -Wextra): none

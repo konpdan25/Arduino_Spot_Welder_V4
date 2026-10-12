@@ -1,0 +1,37 @@
+DIY_SPOT_WELDER_V1 firmware host tests (g++ 13, -fsanitize=address,undefined), 2026-10-12
+Command: make -C Firmware/Tests
+
+PASS plan: default 10 ms / 12 % / 10 ms gap
+PASS plan: hard limits cannot be exceeded
+PASS plan: thermal derating limits main pulse
+PASS plan: invalid plans rejected by sequencer (gate stays OFF)
+PASS sequencer: step order and durations
+PASS boot: normal power-up reaches DISARMED, relay open, gate off
+PASS boot: watchdog reset is reported and latched until ACK
+PASS boot: foot switch held at power-up -> fault, clears only after release + ACK
+PASS boot: ARM closed at power-up -> fault; must open ARM, ACK, then re-arm
+PASS boot: gate feedback stuck high -> non-clearable fault
+PASS boot: welded relay detected (electrode live with relay open)
+PASS boot: broken UVLO detected by self-test
+PASS arm: limiter self-test passes, relay closes, READY; no current during test
+PASS arm: broken hardware limiter -> LIMITER_TEST fault (non-clearable)
+PASS arm: limiter tripping too early (e.g. wrong capacitor) -> fault
+PASS arm: relay that does not close -> RELAY_NO_CLOSE
+PASS arm: undervoltage battery refuses to arm
+PASS arm: opening ARM while READY opens relay -> DISARMED, re-arm requires off->on
+PASS trigger: foot glitch shorter than trigger delay gives NO pulse (reference bug fixed)
+PASS trigger: one pulse per press, exact timing, no re-trigger while held
+PASS trigger: AUTO mode needs continuous contact for the auto delay
+PASS pulse: maximum main pulse is 50 ms even if the setting is larger
+PASS pulse: duty-cycle limit enforces >= 20x ON time between welds
+PASS fault: MOSFET short while READY -> STUCK_CURRENT, relay opens, non-clearable
+PASS fault: hardware limiter cutting a pulse is detected (HW_INTERVENED)
+PASS fault: sequencer hang -> SEQUENCER fault and pulse aborted by the core
+PASS fault: over-temperature locks out, clears below 50 C with ACK
+PASS fault: open NTC -> NTC_INVALID
+PASS derate: 50 C heatsink limits pulse to 35 ms
+PASS fault: battery disconnected while READY -> relay dropped / undervoltage, relay opened
+    (200 scenarios, 74 pulses started)
+PASS fuzz: 200 random scenarios x 20 s - safety invariants hold
+
+6074685 checks, 0 failures
