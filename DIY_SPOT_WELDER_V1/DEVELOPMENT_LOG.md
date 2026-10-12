@@ -24,3 +24,6 @@
 | ECR-005 | GIN pull-down 47k → 22k | margin against TC4422 input leakage |
 | ECR-006 | TO-92 footprints → TO-92_Inline_Wide | DRC clearance and hand soldering |
 | ECR-007 | ADC reference kept at AVCC (an internal 1.1 V option was dropped) | the AREF settling time conflicts with continuous supervision |
+
+## 2026-10-12 — Decision
+* D-8 / OI-01: the user decided to proceed with the Ritar RT1270 as the welding source (power-stage variant P1). The design already targets P1, so no circuit change was needed. The conditions were added to OPEN_ISSUES OI-01. RELEASE_CHECKLIST stages M1, E, H and W still apply.

@@ -112,7 +112,7 @@ The control board (gate driver TC4422 9 A, interlocks, firmware) is common to bo
 | D-5 | IXFH20N50P3, STP6NK60 | Rejected (RDS(on) 0.3 Ω / ≈1 Ω) |
 | D-6 | TC4421 (inverting) | Rejected for weld gate (default-on with pull-down) |
 | D-7 | Arduino Nano + hardware limiter/UVLO | Selected |
-| D-8 | RT1270 as welding source | **Not approved** (estimate: insufficient and outside ratings) |
+| D-8 | RT1270 as welding source | **User decision 2026-10-12: proceed with RT1270 (variant P1).** Engineering estimate unchanged: outside datasheet ratings, weak weld power. Conditions: M1 measurement, bolted tab adapters, staged tests per RELEASE_CHECKLIST |
 | D-9 | Control PCB without any welding-current conductors; welding current on copper busbars and 16 mm² cable | Selected |
 
 **Blocking open items before any battery-connected high-current test:** K101 identification (type, DC rating, latching or not, drop-out voltage), source decision (RT1270 measurement or replacement), F101 selection with real I²t data, IRLZ44N authenticity check, busbar/heatsink mechanical design review. See `OPEN_ISSUES.md`.

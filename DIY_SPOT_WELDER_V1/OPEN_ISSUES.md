@@ -4,7 +4,7 @@ Priority: **B** = blocks any battery-connected high-current test · **H** = high
 
 | ID | Pri | Issue | What is needed | Owner / next action |
 |---|---|---|---|---|
-| OI-01 | B | Welding source: RT1270 estimated 200–390 A, ≈ 4× its 70 A (5 s) datasheet maximum, ≈ 12× less weld power than a car battery; FASTON terminals | Decide: (a) measure RT1270 pulse resistance at ≤ 50 A (M1) and accept that it is a bench supply only, or (b) select a specified high-pulse source (car battery 45–60 Ah / high-rate LiFePO₄) → power-stage variant P2 | User decision |
+| OI-01 | B | Welding source: **user decision 2026-10-12: proceed with the RT1270.** Estimate remains 200–390 A (≈ 4× its 70 A / 5 s datasheet maximum), terminal ≈ 3 V during a weld, FASTON tabs unsuitable for 300 A | Before any weld: measure pulse resistance (M1); replace FASTON push-on contacts by bolted/soldered tab adapters and check their temperature rise; start with short pulses (≤ 10 ms) on loose nickel; ventilated area; watch for case swelling/heating. Weld quality on 0.15 mm Ni is not guaranteed (≈ 12× less weld power than a car battery) | User (decided) / measurement M1 open |
 | OI-02 | B | K101 relay unknown (type, DC carry/break rating, latching or monostable, drop-out voltage, operate/release times) | Read the label / part number; measure coil resistance; check whether it stays switched without coil power (latching → reject) | User |
 | OI-03 | B | Main fuse F101 rating provisional (ANL 150 A) | Fuse datasheet: pre-arc I²t ≥ 5 × 9.8 kA²s and time-current curve at 300–400 A | Engineering |
 | OI-04 | B | IRLZ44N authenticity / matching | Buy from an authorised distributor or measure RDS(on) of each device at 10 A, V_GS 10 V (reject outliers > 25 mΩ) | User |
